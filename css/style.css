@@ -171,6 +171,19 @@ nav ul a:hover::after { width: 100%; }
     line-height: 1.9;
 }
 
+/* 次回開催日テキスト */
+.next-event-notice {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
 /*
  * ★ 次回開催バナー（クリックでグループページへ） ★
  * 日付は「○月○日（日）」の部分を書き換えてください
@@ -936,6 +949,22 @@ section { padding: 88px 32px; }
 /* ============================================
    フッター
    ============================================ */
+.rules-group-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 2px solid var(--brown-light);
+    border-radius: 50px;
+    color: var(--brown-light);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.rules-group-btn:hover {
+    background: var(--brown-light);
+    color: #fff;
+}
+
 footer {
     background: var(--brown);
     color: rgba(255,255,255,0.65);
@@ -1102,6 +1131,41 @@ footer::before {
     padding: 8px 20px;
     border-radius: 999px;
     margin: 18px 0;
+}
+
+.sanpo-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0 24px;
+}
+
+.sanpo-photos img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.sanpo-photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    background: rgba(110,173,110,0.1);
+    border: 2px dashed rgba(110,173,110,0.4);
+    border-radius: 12px;
+    color: var(--brown-light);
+    font-size: 1.4rem;
+    gap: 6px;
+    text-align: center;
+}
+
+.sanpo-photo-placeholder small {
+    font-size: 0.72rem;
+    opacity: 0.7;
+    line-height: 1.5;
 }
 
 .sanpo-btn {
