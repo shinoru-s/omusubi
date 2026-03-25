@@ -966,8 +966,8 @@ section { padding: 88px 32px; }
 }
 
 footer {
-    background: var(--brown);
-    color: rgba(255,255,255,0.65);
+    background: #A07060;
+    color: rgba(255,255,255,0.8);
     text-align: center;
     padding: 56px 32px;
     position: relative;
@@ -979,7 +979,7 @@ footer::before {
     position: absolute;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: rgba(255,209,102,0.06);
+    background: rgba(255,255,255,0.08);
     top: -200px; right: -100px;
 }
 
@@ -987,7 +987,7 @@ footer::before {
 
 .footer-logo {
     font-family: 'Zen Maru Gothic', sans-serif;
-    color: var(--white);
+    color: #fff;
     font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 6px;
@@ -1007,22 +1007,22 @@ footer::before {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
     font-size: 0.88rem;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.1);
     padding: 9px 20px;
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
     transition: background 0.2s, color 0.2s;
 }
 
 .sns-link:hover {
-    background: rgba(255,255,255,0.15);
-    color: var(--yellow);
+    background: rgba(255,255,255,0.2);
+    color: #fff;
 }
 
-.footer-tag { font-size: 0.82rem; color: var(--orange-light); margin-bottom: 24px; }
+.footer-tag { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
 .copyright { font-size: 0.72rem; }
 
 /* ============================================
