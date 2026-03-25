@@ -1142,9 +1142,9 @@ footer::before {
 
 .sanpo-photos img {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
+    height: auto;
     border-radius: 12px;
+    display: block;
 }
 
 .sanpo-photo-placeholder {
@@ -1223,6 +1223,7 @@ footer::before {
     .gallery-grid { grid-template-columns: 1fr; }
     .gal-item:first-child { grid-column: span 1; }
     .btn-group { padding: 22px 40px; font-size: 1.1rem; }
+    .sanpo-photos { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 400px) {
