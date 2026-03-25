@@ -1,0 +1,1231 @@
+/* ============================================
+   お結び集会 - メインスタイルシート
+   ============================================ */
+
+/* --- カラーパレット --- */
+:root {
+    --cream:        #FFFAF3;
+    --orange:       #F07B3F;
+    --orange-deep:  #D9621A;
+    --orange-light: #FFCBA4;
+    --yellow:       #FFD166;
+    --yellow-deep:  #F5B800;
+    --green:        #6EAD6E;
+    --brown:        #6B4838;
+    --brown-mid:    #8A6050;
+    --brown-light:  #A87D6C;
+    --card-bg:      #FFF6E8;
+    --border:       #F5D5A8;
+    --white:        #ffffff;
+}
+
+/* --- リセット・ベース --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   ナビゲーション
+   ============================================ */
+nav {
+    background: rgba(255, 250, 243, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--orange);
+    text-decoration: none;
+}
+
+nav ul { list-style: none; display: flex; gap: 28px; }
+
+nav ul a {
+    text-decoration: none;
+    color: var(--brown-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 2px;
+    background: var(--orange);
+    border-radius: 2px;
+    transition: width 0.25s;
+}
+
+nav ul a:hover { color: var(--orange); }
+nav ul a:hover::after { width: 100%; }
+
+/* ============================================
+   ヒーローセクション
+   ============================================ */
+
+/*
+ * ★ ヒーロー上部テキストエリア ★
+ * タイトル・日時・CTAボタンが入るエリアです
+ */
+.hero-content-area {
+    background: linear-gradient(160deg, #FFF3DC 0%, #FFE8CC 50%, #FFF6E0 100%);
+    padding: 56px 32px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content-area::before {
+    content: '';
+    position: absolute;
+    width: 560px; height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,209,102,0.3) 0%, transparent 70%);
+    top: -180px; right: -120px;
+    pointer-events: none;
+}
+
+.hero-content-area::after {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(110,173,110,0.18) 0%, transparent 70%);
+    bottom: -80px; left: -60px;
+    pointer-events: none;
+}
+
+.hero-content-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    letter-spacing: 0.06em;
+}
+
+.hero-title {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.hero-title .highlight {
+    color: var(--orange);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0;
+    width: 100%; height: 10px;
+    background: var(--yellow);
+    border-radius: 4px;
+    z-index: -1;
+    opacity: 0.65;
+}
+
+.hero-sub {
+    font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+    color: var(--brown-light);
+    margin-bottom: 32px;
+    line-height: 1.9;
+}
+
+/* 次回開催日テキスト */
+.next-event-notice {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
+/*
+ * ★ 次回開催バナー（クリックでグループページへ） ★
+ * 日付は「○月○日（日）」の部分を書き換えてください
+ */
+.next-event-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--brown);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 28px rgba(61,43,31,0.28);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2.8s ease-in-out infinite;
+}
+
+.next-event-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,209,102,0.18), transparent);
+}
+
+.next-event-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(61,43,31,0.4);
+    animation-play-state: paused;
+}
+
+.next-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+}
+
+.next-date {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.35;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1);    box-shadow: 0 8px 28px rgba(61,43,31,0.28); }
+    50%       { transform: scale(1.02); box-shadow: 0 12px 36px rgba(61,43,31,0.38); }
+}
+
+/* ヒーローCTAボタン */
+.hero-cta {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    padding: 24px 88px;
+    border-radius: 999px;
+    box-shadow: 0 10px 32px rgba(240,123,63,0.5);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.03em;
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
+}
+
+.hero-cta:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 18px 48px rgba(240,123,63,0.6);
+}
+
+.hero-cta-note {
+    font-size: 0.72rem;
+    opacity: 0.82;
+    font-weight: 400;
+}
+
+/*
+ * ★ ヒーロー画像エリア ★
+ * 1920×1080の画像を表示します。見切れません。
+ */
+.hero-img-area {
+    background: var(--cream);
+    text-align: center;
+    line-height: 0;
+    padding: 0 clamp(16px, 5vw, 80px) 0;
+}
+
+.hero-img-area img {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0 0 20px 20px;
+}
+
+/* ============================================
+   セクション共通
+   ============================================ */
+section { padding: 88px 32px; }
+
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sec-title-en {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--orange);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.sec-title {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.sec-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 52px;
+}
+
+.sec-divider::before,
+.sec-divider::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.sec-divider-icon { font-size: 1.2rem; }
+
+/* ウェーブ区切り */
+.wave-wrap {
+    line-height: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   イベントについて
+   ============================================ */
+.about { background: var(--card-bg); }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 0.95rem;
+    color: var(--brown-light);
+    margin-bottom: 18px;
+    line-height: 2;
+}
+
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tag {
+    background: var(--white);
+    border: 2px solid var(--orange-light);
+    color: var(--orange-deep);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+}
+
+/*
+ * ★ about セクション画像差し替え ★
+ * images/photo-about.png を好きな写真に変えてください
+ */
+.about-img {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(61,43,31,0.15);
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.about-img::before {
+    content: '';
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+    background: var(--orange-light);
+    border-radius: 20px;
+    opacity: 0.35;
+    z-index: 0;
+}
+
+.about-img-badge {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: var(--yellow);
+    color: var(--brown);
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    z-index: 2;
+}
+
+/* ============================================
+   開催情報
+   ============================================ */
+.info-section { background: var(--white); }
+
+.info-main-card {
+    background: linear-gradient(135deg, var(--brown) 0%, var(--brown-mid) 100%);
+    border-radius: 28px;
+    padding: 52px 48px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-main-card::before {
+    content: '';
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    top: -140px; right: -80px;
+}
+
+.info-main-card::after {
+    content: '';
+    position: absolute;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,209,102,0.1);
+    bottom: -60px; left: -40px;
+}
+
+.info-schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.info-left-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    opacity: 0.55;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.big-date {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.big-date span { color: var(--yellow); }
+
+.time-text {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-weight: 700;
+    color: var(--orange-light);
+}
+
+.info-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.info-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.info-item .i-icon { font-size: 1.2rem; display: block; margin-bottom: 4px; }
+.info-item .i-label { font-size: 0.68rem; opacity: 0.55; letter-spacing: 0.06em; margin-bottom: 4px; }
+.info-item .i-val {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+/* ============================================
+   こんな方を歓迎します
+   ============================================ */
+.welcome-bg {
+    background: linear-gradient(160deg, #FFF6E8 0%, #F0FAF0 100%);
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.welcome-item {
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-size: 0.88rem;
+    color: var(--brown-light);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.welcome-item:hover {
+    border-color: var(--orange-light);
+    transform: translateY(-2px);
+}
+
+.welcome-item::before {
+    content: '🌸';
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+/* ============================================
+   ギャラリー
+   ============================================ */
+.gallery { background: var(--cream); }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gal-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gal-item {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+/*
+ * ★ ギャラリー画像の差し替え方法 ★
+ * images フォルダに写真を入れて src= のパスを変えてください。
+ * 写真がない枠はグレーで表示されます。
+ * 増やす: <div class="gal-item">〜</div> をコピーして追加
+ * 減らす: <div class="gal-item">〜</div> をまるごと削除
+ */
+.gal-item img {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gal-item:hover img { transform: scale(1.05); }
+.gal-item:first-child img { min-height: 380px; }
+
+.img-placeholder {
+    width: 100%;
+    min-height: 180px;
+    background: #F0E8DC;
+    border: 2px dashed var(--orange-light);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--brown-light);
+    font-size: 0.8rem;
+    gap: 8px;
+}
+
+.img-placeholder .ph-icon { font-size: 2rem; }
+
+/* 動画埋め込み（16:9レスポンシブ） */
+.gallery-video {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.video-wrap {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 12px 48px rgba(61,43,31,0.18);
+}
+
+.video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   グループ参加 CTA（大きなボタンエリア）
+   ============================================ */
+.group-cta {
+    background: linear-gradient(135deg, var(--orange) 0%, #E8612A 50%, var(--yellow-deep) 100%);
+    text-align: center;
+    padding: 100px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.group-cta::before {
+    content: '';
+    position: absolute;
+    width: 640px; height: 640px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    top: -220px; right: -160px;
+}
+
+.group-cta::after {
+    content: '';
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    bottom: -160px; left: -100px;
+}
+
+.group-cta-inner { position: relative; z-index: 1; }
+
+.group-cta h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 12px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.group-cta p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 44px;
+    line-height: 1.8;
+}
+
+.btn-group {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    color: var(--orange-deep);
+    text-decoration: none;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 900;
+    padding: 26px 72px;
+    border-radius: 999px;
+    box-shadow: 0 14px 48px rgba(0,0,0,0.22), 0 2px 0 rgba(0,0,0,0.06) inset;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.03em;
+}
+
+.btn-group::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(240,123,63,0.08), transparent);
+}
+
+.btn-group:hover {
+    transform: translateY(-7px) scale(1.04);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+}
+
+.btn-group-sub {
+    font-size: 0.75rem;
+    color: var(--brown-light);
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   参加方法
+   ============================================ */
+.join { background: var(--card-bg); }
+
+.steps { display: flex; flex-direction: column; gap: 20px; }
+
+.step {
+    display: flex;
+    gap: 24px;
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 26px 28px;
+    align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.step:hover {
+    border-color: var(--orange-light);
+    box-shadow: 0 6px 24px rgba(240,123,63,0.1);
+}
+
+.step-num {
+    background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+    color: var(--white);
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(240,123,63,0.4);
+}
+
+.step-body { flex: 1; }
+
+.step-body h3 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 6px;
+}
+
+.step-body p {
+    font-size: 0.9rem;
+    color: var(--brown-light);
+}
+
+/*
+ * ★ 参加手順画像（中央寄せ） ★
+ * images/photo-join.png を差し替えてください
+ */
+.step-img {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.step-img img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+/* グループ申請注意事項 */
+.caution-box {
+    margin-top: 52px;
+    background: #FFFBF0;
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+    padding: 30px 36px;
+}
+
+.caution-box h3 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1rem;
+    color: var(--brown);
+    margin-bottom: 18px;
+}
+
+.caution-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+}
+
+.caution-list li {
+    font-size: 0.88rem;
+    color: var(--brown-light);
+    padding-left: 18px;
+    position: relative;
+}
+
+.caution-list li::before {
+    content: '▸';
+    color: var(--orange);
+    position: absolute;
+    left: 0;
+}
+
+/* ============================================
+   ルール（8項目・詳細）
+   ============================================ */
+.rules { background: var(--white); }
+
+.rules-intro {
+    background: #FFF8EC;
+    border-left: 5px solid var(--yellow);
+    border-radius: 0 14px 14px 0;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    font-size: 0.92rem;
+    color: var(--brown-mid);
+    line-height: 1.85;
+}
+
+.rules-img {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.rules-img img {
+    max-width: 680px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(61,43,31,0.12);
+    display: inline-block;
+}
+
+.rules-heading {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 14px 20px;
+    background: #FFF0E0;
+    border-radius: 12px;
+    border: 2px solid var(--orange-light);
+}
+
+.rule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.rule-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.rule-card:hover {
+    border-color: var(--orange-light);
+    transform: translateY(-2px);
+}
+
+.rule-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.rule-num {
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.rule-title {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--brown);
+}
+
+.rule-detail {
+    font-size: 0.82rem;
+    color: var(--brown-light);
+    line-height: 1.7;
+    padding-left: 38px;
+}
+
+.rules-note {
+    background: #FFF8EC;
+    border: 2px solid var(--yellow);
+    border-radius: 16px;
+    padding: 24px 28px;
+    font-size: 0.88rem;
+    color: var(--brown-light);
+    line-height: 1.85;
+}
+
+.rules-note p + p { margin-top: 8px; }
+
+.rules-warning {
+    color: var(--orange-deep);
+    font-weight: 700;
+    margin-top: 10px !important;
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+.rules-group-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 2px solid var(--brown-light);
+    border-radius: 50px;
+    color: var(--brown-light);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.rules-group-btn:hover {
+    background: var(--brown-light);
+    color: #fff;
+}
+
+footer {
+    background: #A07060;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 56px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    top: -200px; right: -100px;
+}
+
+.footer-inner { position: relative; z-index: 1; }
+
+.footer-logo {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.footer-host { font-size: 0.85rem; margin-bottom: 24px; }
+
+.sns-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.sns-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.88rem;
+    background: rgba(255,255,255,0.1);
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.2s, color 0.2s;
+}
+
+.sns-link:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+.footer-tag { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+.copyright { font-size: 0.72rem; }
+
+/* ============================================
+   ポスター・開催情報2カラム
+   ============================================ */
+.info-two-col {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.info-poster {
+    text-align: center;
+}
+
+.info-poster img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(61,43,31,0.18);
+    display: block;
+}
+
+/* ============================================
+   ぶらりさんぽ
+   ============================================ */
+.sanpo-section {
+    background: linear-gradient(160deg, #EEF7EE 0%, #FFF6E8 100%);
+}
+
+.sanpo-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.sanpo-img {
+    width: 100%;
+    max-width: 720px;
+}
+
+.sanpo-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(61,43,31,0.15);
+    display: block;
+}
+
+.sanpo-text {
+    width: 100%;
+    max-width: 720px;
+}
+
+.sanpo-badge {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    letter-spacing: 0.04em;
+}
+
+.sanpo-text p {
+    font-size: 0.95rem;
+    color: var(--brown-light);
+    margin-bottom: 14px;
+    line-height: 2;
+}
+
+.sanpo-voices {
+    margin: 18px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sanpo-voice {
+    background: var(--white);
+    border-left: 4px solid var(--green);
+    padding: 8px 16px;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.88rem;
+    color: var(--brown-mid);
+    font-style: italic;
+}
+
+.sanpo-note {
+    font-size: 0.85rem;
+    color: var(--brown-light);
+    opacity: 0.8;
+}
+
+.sanpo-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow);
+    color: var(--brown);
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 8px 20px;
+    border-radius: 999px;
+    margin: 18px 0;
+}
+
+.sanpo-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0 24px;
+}
+
+.sanpo-photos img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.sanpo-photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    background: rgba(110,173,110,0.1);
+    border: 2px dashed rgba(110,173,110,0.4);
+    border-radius: 12px;
+    color: var(--brown-light);
+    font-size: 1.4rem;
+    gap: 6px;
+    text-align: center;
+}
+
+.sanpo-photo-placeholder small {
+    font-size: 0.72rem;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.sanpo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--green) 0%, #5A9E5A 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 999px;
+    box-shadow: 0 8px 28px rgba(110,173,110,0.4);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.sanpo-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(110,173,110,0.5);
+}
+
+/* ============================================
+   スクロールアニメーション
+   ============================================ */
+.fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade.on { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   レスポンシブ
+   ============================================ */
+@media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .info-schedule { grid-template-columns: 1fr; gap: 28px; }
+    .info-two-col { grid-template-columns: 1fr; }
+    .info-poster img { max-width: 400px; margin: 0 auto; }
+    .rule-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gal-item:first-child { grid-column: span 2; grid-row: span 1; }
+    .gal-item:first-child img { min-height: 220px; }
+}
+
+@media (max-width: 640px) {
+    section { padding: 64px 20px; }
+    nav { padding: 12px 20px; }
+    nav ul { display: none; }
+    .hero-content-area { padding: 40px 20px 36px; }
+    .hero-cta { padding: 20px 48px; }
+    .info-items { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gal-item:first-child { grid-column: span 1; }
+    .btn-group { padding: 22px 40px; font-size: 1.1rem; }
+    .sanpo-photos { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 400px) {
+    .info-items { grid-template-columns: 1fr; }
+}
