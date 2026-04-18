@@ -1293,3 +1293,543 @@ nav ul a.active::after {
 @media (max-width: 400px) {
     .info-items { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   ★ リッチネス強化レイヤー（既存デザインに奥行き・装飾を追加）
+   ============================================ */
+
+/* --- グローバル：ページ全体を貫く桜の花びら（セクション跨ぎで途切れない） --- */
+.petals-global {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 150;    /* nav(200)より下、コンテンツより上 */
+    overflow: hidden;
+}
+
+/* --- 共通：装飾用のオーラ（柔らかい光の玉） --- */
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+/* --- 共通：旧ローカル花びらコンテナ（HTMLからは削除済み。残存しても無害） --- */
+.petals-bg { display: none !important; }
+
+.petal {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background:
+        radial-gradient(ellipse at 30% 30%, #FFE6EC 0%, #FFC4D2 55%, #F69EB1 100%);
+    border-radius: 100% 0 100% 0;
+    opacity: 0;
+    animation: petalFall linear infinite;
+    box-shadow: 0 1px 2px rgba(246,158,177,0.18) inset;
+    filter: blur(0.2px);
+}
+
+.petal::after {
+    content: '';
+    position: absolute;
+    inset: 35% 45% 35% 25%;
+    background: rgba(255,255,255,0.55);
+    border-radius: 100% 0 100% 0;
+    transform: rotate(20deg);
+}
+
+@keyframes petalFall {
+    0%   { transform: translate3d(0, -10vh, 0) rotate(0deg);   opacity: 0; }
+    10%  { opacity: 0.55; }
+    50%  { transform: translate3d(40px, 50vh, 0) rotate(180deg); }
+    90%  { opacity: 0.4; }
+    100% { transform: translate3d(-30px, 110vh, 0) rotate(360deg); opacity: 0; }
+}
+
+/* --- セクション見出しのキラキラ装飾 --- */
+.sec-title-en {
+    position: relative;
+}
+.sec-title-en::before,
+.sec-title-en::after {
+    content: '✦';
+    color: var(--yellow-deep);
+    font-size: 0.85em;
+    margin: 0 0.55em;
+    opacity: 0.55;
+    vertical-align: middle;
+}
+
+/* --- カードに上品な深み（共通） --- */
+.welcome-item,
+.rule-card,
+.step,
+.caution-box,
+.rules-note,
+.sanpo-voice {
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.85) inset,
+        0 1px 2px rgba(107,72,56,0.04),
+        0 6px 16px rgba(107,72,56,0.07);
+}
+
+.welcome-item:hover,
+.rule-card:hover,
+.step:hover {
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.9) inset,
+        0 2px 4px rgba(107,72,56,0.05),
+        0 12px 30px rgba(240,123,63,0.14);
+}
+
+/* --- ヒーロー：オーラと装飾 --- */
+.hero-content-area { position: relative; }
+.hero-content-area > .glow-orb-pink {
+    width: 380px; height: 380px;
+    top: -80px; left: -90px;
+    background: radial-gradient(circle, #FFD1DC 0%, transparent 70%);
+}
+.hero-content-area > .glow-orb-yellow {
+    width: 320px; height: 320px;
+    bottom: -100px; right: -60px;
+    background: radial-gradient(circle, #FFE6A8 0%, transparent 70%);
+}
+
+/* タイトル装飾（キラキラとゴールドアクセント） */
+.hero-title { position: relative; }
+.hero-title .highlight::before {
+    content: '✦';
+    position: absolute;
+    top: -0.25em;
+    left: -0.55em;
+    font-size: 0.35em;
+    color: var(--yellow-deep);
+    opacity: 0.75;
+    animation: sparkleFloat 3.5s ease-in-out infinite;
+}
+@keyframes sparkleFloat {
+    0%, 100% { transform: translateY(0) rotate(0); opacity: 0.75; }
+    50%       { transform: translateY(-4px) rotate(15deg); opacity: 1; }
+}
+
+/* --- ヒーローバッジを少しリッチに --- */
+.hero-badge {
+    background: linear-gradient(135deg, #7DBE7D 0%, var(--green) 60%, #5A9E5A 100%);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.35) inset,
+        0 4px 14px rgba(110,173,110,0.35);
+}
+
+/* --- About セクションを少しリッチに --- */
+.about { position: relative; overflow: hidden; }
+.about > .glow-orb-soft {
+    width: 420px; height: 420px;
+    top: 10%; right: -160px;
+    background: radial-gradient(circle, #FFE0C2 0%, transparent 70%);
+    opacity: 0.45;
+}
+
+/* タグをほんのり立体的に */
+.tag {
+    background: linear-gradient(180deg, #fff 0%, #FFF8EE 100%);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.9) inset,
+        0 2px 6px rgba(240,123,63,0.12);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.9) inset,
+        0 6px 14px rgba(240,123,63,0.22);
+}
+
+/* --- Welcome セクションのオーラ --- */
+.welcome-bg { position: relative; overflow: hidden; }
+.welcome-bg > .glow-orb-mint {
+    width: 360px; height: 360px;
+    top: -80px; left: -90px;
+    background: radial-gradient(circle, #C9E5C9 0%, transparent 70%);
+    opacity: 0.5;
+}
+.welcome-bg > .glow-orb-peach {
+    width: 320px; height: 320px;
+    bottom: -100px; right: -60px;
+    background: radial-gradient(circle, #FFD8B8 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+/* welcomeアイテムの花マークをよりやさしい色に */
+.welcome-item::before { filter: saturate(0.85); }
+
+/* --- ぶらりさんぽ セクションのオーラ --- */
+.sanpo-section { position: relative; overflow: hidden; }
+.sanpo-section > .glow-orb-green {
+    width: 420px; height: 420px;
+    top: 5%; left: -120px;
+    background: radial-gradient(circle, #B8DDB8 0%, transparent 70%);
+    opacity: 0.45;
+}
+
+/* --- CTA セクション：装飾を加えつつボタンの存在感は強化 --- */
+.group-cta { isolation: isolate; }
+
+/* CTA に控えめなキラキラ装飾 */
+.group-cta::before {
+    background:
+        radial-gradient(circle at 18% 28%, rgba(255,255,255,0.18) 0%, transparent 12%),
+        radial-gradient(circle at 82% 16%, rgba(255,255,255,0.15) 0%, transparent 10%),
+        radial-gradient(circle at 12% 78%, rgba(255,255,255,0.13) 0%, transparent 10%),
+        radial-gradient(circle at 88% 82%, rgba(255,255,255,0.14) 0%, transparent 10%),
+        rgba(255,255,255,0.06);
+    width: 100%; height: 100%;
+    top: 0; right: 0;
+    border-radius: 0;
+}
+
+/* CTA ボタンに上品な内側ハイライト */
+.btn-group {
+    background:
+        linear-gradient(180deg, #ffffff 0%, #FFF8EC 100%);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,1) inset,
+        0 -2px 0 rgba(240,123,63,0.08) inset,
+        0 14px 48px rgba(0,0,0,0.22),
+        0 2px 0 rgba(0,0,0,0.06) inset;
+}
+
+/* CTA ボタンに微細なシマー効果 */
+.btn-group::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(110deg,
+        transparent 30%,
+        rgba(255,255,255,0.75) 50%,
+        transparent 70%);
+    transform: rotate(8deg);
+    animation: btnShimmer 4.5s 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes btnShimmer {
+    0%, 80%, 100% { left: -100%; }
+    50%            { left: 130%; }
+}
+
+/* --- 参加方法ステップの番号を立体的に --- */
+.step-num {
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.45) inset,
+        0 -2px 0 rgba(0,0,0,0.08) inset,
+        0 6px 18px rgba(240,123,63,0.45);
+}
+
+/* --- ルールカードに番号バッジの深み --- */
+.rule-num {
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 4px 10px rgba(240,123,63,0.4);
+}
+
+/* --- セクション間ウェーブの上部にうっすら影 --- */
+.wave-wrap {
+    position: relative;
+}
+.wave-wrap::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(180deg, rgba(107,72,56,0.04), transparent);
+    pointer-events: none;
+}
+
+/* --- フッターをほんのりリッチに --- */
+footer { position: relative; overflow: hidden; }
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255,209,102,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 100%, rgba(240,123,63,0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+/* SNSリンクを少し上品に */
+.sns-link {
+    background: rgba(255,255,255,0.12);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.15) inset,
+        0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* --- セクションタイトル下の区切り線をリッチに --- */
+.sec-divider::before,
+.sec-divider::after {
+    background: linear-gradient(90deg, transparent, var(--orange-light), var(--border));
+}
+.sec-divider::after {
+    background: linear-gradient(90deg, var(--border), var(--orange-light), transparent);
+}
+
+/* --- 見出しに優しい下線（about/welcome等の sec-title） --- */
+.sec-title {
+    position: relative;
+}
+
+/* --- 既存の info-main-card など、内部の z-index を確保 --- */
+.about > .inner,
+.welcome-bg > .inner,
+.sanpo-section > .inner,
+.hero-content-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 細部：リンクホバーの色合いをやわらかく --- */
+nav ul a::after { background: linear-gradient(90deg, var(--orange), var(--yellow-deep)); }
+
+/* --- レスポンシブ：モバイルではオーラを縮小 --- */
+@media (max-width: 640px) {
+    .glow-orb { transform: scale(0.6); opacity: 0.4; }
+    .petal { width: 12px; height: 12px; }
+}
+
+/* ============================================
+   ★ 追加リッチ化レイヤー v2（ぼつぼつ除去／華やか増し）
+   ============================================ */
+
+/* --- welcome / sanpo のドット柄を滑らかなグラデーションに差し替え --- */
+.welcome-bg {
+    background:
+        radial-gradient(ellipse at 20% 10%, rgba(255,209,102,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 90%, rgba(240,123,63,0.12) 0%, transparent 55%),
+        linear-gradient(160deg, #FFF6E8 0%, #FFF0E0 45%, #F4FAF2 100%);
+    background-size: 100% 100%;
+}
+.sanpo-section {
+    background:
+        radial-gradient(ellipse at 15% 15%, rgba(110,173,110,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 85%, rgba(255,209,102,0.14) 0%, transparent 55%),
+        linear-gradient(160deg, #EEF7EE 0%, #F4FBED 50%, #FFF6E8 100%);
+    background-size: 100% 100%;
+}
+
+/* --- ヒーロータイトルを確実にブロック表示（バッジ＝上・タイトル＝下） --- */
+.hero-content-inner > .hero-badge { display: inline-flex; }
+.hero-content-inner > .hero-title { display: block; }
+
+/* --- ヒーロー背景にほんのり流れるオーロラ --- */
+.hero-content-area::after {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 30% 40%, rgba(255,220,230,0.55) 0%, transparent 40%),
+        radial-gradient(circle at 70% 60%, rgba(255,235,200,0.55) 0%, transparent 40%),
+        radial-gradient(circle at 50% 20%, rgba(255,248,230,0.55) 0%, transparent 40%);
+    filter: blur(40px);
+    z-index: 0;
+    animation: auroraDrift 18s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes auroraDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(3%, -2%) scale(1.05); }
+    66%       { transform: translate(-3%, 2%) scale(0.97); }
+}
+
+/* --- タイトル「お結び」：単色で読みやすく --- */
+.hero-title .highlight {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--orange-deep);
+}
+
+/* --- ぶらりさんぽ badge・ボタンを中央寄せ --- */
+.sanpo-badge {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 18px;
+    text-align: center;
+}
+.sanpo-btn {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* --- ぶらりさんぽ：全体を少し華やかに（見出し周辺だけ） --- */
+.sanpo-text .sanpo-time {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: fit-content;
+}
+
+/* --- 追加：装飾用の大きな★とキラキラ（控えめ・セクション背景） --- */
+.decor-sparkle {
+    position: absolute;
+    color: var(--yellow-deep);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    animation: sparkleFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px rgba(245,184,0,0.25));
+}
+
+/* --- 追加：セクション見出しのメインタイトル（.sec-title）にほんのり光沢 --- */
+.sec-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 12px auto 0;
+    background: linear-gradient(90deg, transparent, var(--orange-light), var(--yellow-deep), var(--orange-light), transparent);
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+/* --- 既存の sec-divider は画像に替わる控えめなデザインに --- */
+.sec-divider { margin-bottom: 48px; }
+
+/* --- ヒーロー画像エリアにほんのりフェードシャドウ（画像の下） --- */
+.hero-img-area {
+    position: relative;
+}
+.hero-img-area::after {
+    content: '';
+    position: absolute;
+    left: 10%; right: 10%;
+    bottom: -14px;
+    height: 28px;
+    background: radial-gradient(ellipse at center, rgba(107,72,56,0.18) 0%, transparent 70%);
+    filter: blur(10px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- グループCTAボタンにグラデーション縁 --- */
+.btn-group {
+    position: relative;
+}
+
+/* --- ぶらりさんぽボタンにもシマー --- */
+.sanpo-btn { position: relative; overflow: hidden; }
+.sanpo-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
+    transform: rotate(8deg);
+    animation: btnShimmer 5s 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* --- ルール申請ボタン（rules-group-btn）にもふんわり --- */
+.rules-group-btn {
+    background: linear-gradient(135deg, #fff, #FFF6E8);
+    border-color: var(--orange-light);
+    color: var(--brown-mid);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,1) inset,
+        0 4px 14px rgba(240,123,63,0.18);
+    transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+}
+.rules-group-btn:hover {
+    background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(240,123,63,0.4);
+}
+
+/* --- nav にわずかなグラデーション --- */
+nav {
+    background:
+        linear-gradient(180deg, rgba(255,250,243,0.98) 0%, rgba(255,246,232,0.95) 100%);
+}
+
+/* --- caution-box と rules-note に上品な装飾 --- */
+.caution-box {
+    background:
+        linear-gradient(135deg, #FFFBF0 0%, #FFF6E8 100%);
+    position: relative;
+    overflow: hidden;
+}
+.caution-box::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(255,209,102,0.25), transparent 70%);
+    pointer-events: none;
+}
+.rules-note {
+    background: linear-gradient(135deg, #FFF8EC 0%, #FFFDF5 100%);
+}
+
+/* --- step カードにほんのり縁取りのグラデ --- */
+.step {
+    background:
+        linear-gradient(180deg, #fff 0%, #FFFBF2 100%);
+}
+
+/* --- rule-card も同じく --- */
+.rule-card {
+    background: linear-gradient(180deg, var(--card-bg) 0%, #FFF2DF 100%);
+}
+
+/* --- welcome-item も --- */
+.welcome-item {
+    background: linear-gradient(180deg, #fff 0%, #FFFBF2 100%);
+}
+
+/* --- sns-link にわずかな輝き --- */
+.sns-link {
+    transition: background 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.sns-link:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.3) inset,
+        0 8px 22px rgba(0,0,0,0.22);
+}
+
+/* --- 全体：スクロール時の奥行き（about 画像が少し大きく見える） --- */
+.about-img img {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.about-img:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(61,43,31,0.22);
+}
+
+/* --- ぶらりさんぽメイン画像も同様 --- */
+.sanpo-img img {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.sanpo-img:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(61,43,31,0.22);
+}
+
+/* --- モバイル調整 --- */
+@media (max-width: 640px) {
+    .hero-content-area::after { filter: blur(25px); }
+    .sec-title::after { width: 48px; }
+}
