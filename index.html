@@ -6,7 +6,7 @@
     <title>お結び集会 | VRChat 交流会イベント</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- ========== 共通 SVG アイコン（細線） ========== -->
@@ -58,11 +58,12 @@
         <span class="petal" style="left:72%; animation-duration:24s; animation-delay:3s;"></span>
         <span class="petal" style="left:90%; animation-duration:23s; animation-delay:14s;"></span>
     </div>
+    <div class="scroll-meter" aria-hidden="true"><span></span></div>
 
     <!-- ナビゲーション -->
     <nav>
         <a class="nav-logo" href="#">
-            <span class="nav-logo-mark" aria-hidden="true"></span>
+            <img class="nav-logo-mark" src="images/icon.png" alt="" aria-hidden="true">
             <span class="nav-logo-text">お結び集会</span>
         </a>
         <ul>
@@ -73,6 +74,11 @@
             <li><a href="#rules">ルール</a></li>
         </ul>
     </nav>
+    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+       target="_blank" rel="noopener" class="floating-join">
+        <span class="floating-join-main">グループ参加</span>
+        <span class="floating-join-sub">VRChatで開く</span>
+    </a>
 
     <!-- ========== ヒーローセクション ========== -->
 
@@ -98,6 +104,11 @@
                 初心者の方、マイクオフ、デスクトップの方も大歓迎。<br>
                 トラストレベルを問わず、どなたでも参加できるやさしい交流の場です。
             </p>
+            <div class="hero-handbill" aria-label="イベント概要">
+                <span>隔週日曜 20:30〜</span>
+                <span>PC / Quest</span>
+                <span>マイクOFF OK</span>
+            </div>
         </div>
     </div>
 
@@ -444,7 +455,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-logo">
-                <span class="footer-logo-mark" aria-hidden="true"></span>
+                <img class="footer-logo-mark" src="images/icon.png" alt="" aria-hidden="true">
                 <span class="footer-logo-text">お結び集会</span>
             </div>
             <p class="footer-host">主催 — しのる。</p>

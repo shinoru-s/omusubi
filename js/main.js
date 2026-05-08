@@ -40,6 +40,39 @@ window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
+// --- スクロール連動の細かな演出 ---
+const root = document.documentElement;
+const floatingJoin = document.querySelector('.floating-join');
+
+const updateScrollEffects = () => {
+    const max = Math.max(1, root.scrollHeight - window.innerHeight);
+    const progress = window.scrollY / max;
+    root.style.setProperty('--scroll-progress', progress.toFixed(4));
+    root.style.setProperty('--float-hide', window.scrollY < 260 ? '1' : '0');
+};
+
+updateScrollEffects();
+window.addEventListener('scroll', updateScrollEffects, { passive: true });
+window.addEventListener('resize', updateScrollEffects, { passive: true });
+
+// --- 花びらを少し増やして、ページ全体に動きを出す ---
+const petalsGlobal = document.querySelector('.petals-global');
+if (petalsGlobal) {
+    const petalSettings = [
+        [6, 29, 4], [17, 24, 12], [42, 31, 2], [63, 27, 9],
+        [78, 33, 17], [96, 28, 7], [24, 36, 20]
+    ];
+
+    petalSettings.forEach(([left, duration, delay]) => {
+        const petal = document.createElement('span');
+        petal.className = 'petal';
+        petal.style.left = `${left}%`;
+        petal.style.animationDuration = `${duration}s`;
+        petal.style.animationDelay = `${delay}s`;
+        petalsGlobal.appendChild(petal);
+    });
+}
+
 // --- アクティブ セクション ハイライト ---
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('nav ul a[href^="#"]');
