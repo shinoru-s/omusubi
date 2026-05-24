@@ -55,7 +55,7 @@ updateScrollEffects();
 window.addEventListener('scroll', updateScrollEffects, { passive: true });
 window.addEventListener('resize', updateScrollEffects, { passive: true });
 
-// --- 花びらを少し増やして、ページ全体に動きを出す ---
+// --- 桜の花びらをページ全体に追加 ---
 const petalsGlobal = document.querySelector('.petals-global');
 if (petalsGlobal) {
     const petalSettings = [

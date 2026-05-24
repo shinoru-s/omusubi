@@ -6,8 +6,10 @@
     <title>お結び集会 | VRChat 交流会イベント</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./favicon.ico" sizes="any">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/redesign.css">
 
     <!-- ========== 共通 SVG アイコン（細線） ========== -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
@@ -68,10 +70,11 @@
         </a>
         <ul>
             <li><a href="#about">イベントについて</a></li>
+            <li><a href="#welcome">歓迎する方</a></li>
             <li><a href="#gallery">ギャラリー</a></li>
             <li><a href="#sanpo">ぶらりさんぽ</a></li>
             <li><a href="#join">参加方法</a></li>
-            <li><a href="#rules">ルール</a></li>
+            <li><a href="#rules">お願い</a></li>
         </ul>
     </nav>
     <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
@@ -101,22 +104,54 @@
                 <span class="highlight">お結び</span>集会
             </h1>
             <p class="hero-sub">
-                初心者の方、マイクオフ、デスクトップの方も大歓迎。<br>
-                トラストレベルを問わず、どなたでも参加できるやさしい交流の場です。
+                初心者さん、マイクオフ、デスクトップの方も歓迎。<br>
+                PC / VR / Questで参加できる、まったりとした交流会です。
             </p>
             <div class="hero-handbill" aria-label="イベント概要">
                 <span>隔週日曜 20:30〜</span>
                 <span>PC / Quest</span>
                 <span>マイクOFF OK</span>
+                <span>ランク不問</span>
+            </div>
+            <div class="hero-actions" aria-label="主要リンク">
+                <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+                   target="_blank" rel="noopener" class="hero-primary-btn">
+                    グループに参加する
+                    <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                </a>
+                <a href="#join" class="hero-secondary-btn">
+                    参加方法を見る
+                    <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                </a>
             </div>
         </div>
     </div>
+
+    <section class="ease-strip" aria-label="参加しやすい理由">
+        <div class="ease-strip-inner">
+            <div class="ease-item">
+                <span class="ease-mark">01</span>
+                <strong>初心者専用の説明部屋あり</strong>
+                <p>初めての方も、まずは説明を聞いてからゆっくり合流できます。</p>
+            </div>
+            <div class="ease-item">
+                <span class="ease-mark">02</span>
+                <strong>マイクOFFでも参加OK</strong>
+                <p>話すのが苦手な方も、無理なく同じ空間を楽しめます。</p>
+            </div>
+            <div class="ease-item">
+                <span class="ease-mark">03</span>
+                <strong>会話のきっかけになるギミック</strong>
+                <p>タグ機能や直感的に遊べる要素を用意しています。</p>
+            </div>
+        </div>
+    </section>
 
     <!-- ========== グループ参加 CTA ========== -->
     <section class="group-cta" id="join-cta">
         <div class="group-cta-inner">
             <span class="group-cta-en">Join Our Group</span>
-            <h2>とっても簡単。<br>グループに参加しよう。</h2>
+            <h2>まずはグループに参加しよう。</h2>
             <p>
                 グループに登録することでイベントに参加できます。<br>
                 次回開催日もグループページよりご確認いただけます。
@@ -157,6 +192,7 @@
                     <p>初心者の方やVRChatを始めたばかりの方も大歓迎。肩の力を抜いて、ゆるりと遊びに来てください。</p>
                     <p>あなたの心の声を表示する便利なタグ機能や、誰でも直感的に遊べるギミックなど、たくさんご用意しています。</p>
                     <p>初心者専用の説明部屋もあるので、初めての方も安心してお越しください。</p>
+                    <p class="about-note">スマホでのご参加は、ギミックや設備の仕様、複数人のご来場による負荷などにより満足のいく体験が難しいため、PC・VR・Questでのご参加を強く推奨しています。</p>
                     <div class="about-tags">
                         <span class="tag">初心者歓迎</span>
                         <span class="tag">マイクOFF OK</span>
@@ -272,16 +308,18 @@
                         </div>
                     </div>
 
-                    <div class="sanpo-time">
-                        <svg class="sanpo-time-icon" aria-hidden="true"><use href="#icon-clock"/></svg>
-                        22:00〜 不定期開催
-                    </div>
+                    <div class="sanpo-actions">
+                        <div class="sanpo-time">
+                            <svg class="sanpo-time-icon" aria-hidden="true"><use href="#icon-clock"/></svg>
+                            22:00〜 不定期開催
+                        </div>
 
-                    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-                       target="_blank" rel="noopener" class="sanpo-btn">
-                        ぶらりさんぽに参加する
-                        <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-                    </a>
+                        <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+                           target="_blank" rel="noopener" class="sanpo-btn">
+                            ぶらりさんぽに参加する
+                            <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -356,7 +394,7 @@
     <section class="rules" id="rules">
         <div class="inner">
             <span class="sec-title-en fade">Rules</span>
-            <h2 class="sec-title fade">イベントルール</h2>
+            <h2 class="sec-title fade">安心して過ごすためのお願い</h2>
             <div class="sec-divider fade" aria-hidden="true">
                 <span class="sec-divider-line"></span>
                 <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
@@ -436,7 +474,7 @@
             </div>
 
             <div class="rules-note fade">
-                <p>VRC始めたての方も多いため、上記行為に見慣れていない方が多いです。</p>
+                <p>VRCを始めたばかりの方も多いため、上記行為に見慣れていない方が多いです。</p>
                 <p>該当すると判断した場合、スタッフが随時お声がけいたしますので、ご理解の程よろしくお願いいたします。</p>
                 <p class="rules-warning">ルールの守れない方が多いとワールド内に厳しい制限を設けざるを得なくなります。</p>
             </div>
