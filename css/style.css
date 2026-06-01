@@ -2774,4 +2774,158 @@ footer::after {
     }
 }
 
+/* ============================================
+   Respectful rich pass: 既存トーンと画像表示を守る追補
+   ============================================ */
+.hero-img-area {
+    overflow: visible;
+}
+
+.hero-img-area img {
+    width: min(1280px, 94vw);
+    max-width: none;
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+.about-img img,
+.step-img img,
+.rules-img img,
+.sanpo-img img,
+.sanpo-photos img {
+    object-fit: contain;
+    object-position: center;
+    background: #fffdf7;
+}
+
+.about {
+    overflow: hidden;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    right: max(12px, calc((100% - 1120px) / 2));
+    bottom: 34px;
+    width: min(420px, 42vw);
+    aspect-ratio: 1776 / 768;
+    background: url("../images/decor/omusubi-vr-collage.png") center / contain no-repeat;
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about > .inner {
+    z-index: 1;
+}
+
+.hero-content-area {
+    background:
+        radial-gradient(circle at 18% 24%, rgba(255,255,255,0.42) 0%, transparent 32%),
+        radial-gradient(circle at 84% 76%, rgba(123,181,123,0.13) 0%, transparent 34%),
+        linear-gradient(180deg, rgba(255,244,223,0.94), rgba(255,249,238,0.96)),
+        url("../images/decor/washi-texture.jpg") center / 560px auto repeat;
+}
+
+.group-cta {
+    background:
+        linear-gradient(135deg, rgba(236,128,71,0.94), rgba(242,185,60,0.9)),
+        url("../images/decor/washi-texture.jpg") center / 520px auto repeat;
+}
+
+body,
+.hero-title,
+.hero-sub,
+.hero-handbill span,
+.group-cta h2,
+.group-cta p,
+.btn-group-label,
+.welcome-item,
+.step-body p,
+.rule-title,
+.rule-detail,
+.sanpo-text p,
+.sanpo-voice,
+.caution-list li {
+    overflow-wrap: anywhere;
+}
+
+.hero-handbill span {
+    white-space: normal;
+}
+
+.welcome-item,
+.step,
+.rule-card,
+.caution-box,
+.sanpo-text {
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+    .about::after {
+        width: min(360px, 72vw);
+        opacity: 0.08;
+        right: -24px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-img-area img {
+        width: 100%;
+    }
+
+    .hero-content-inner,
+    .group-cta-inner,
+    .inner {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(2.35rem, 11vw, 3.2rem);
+    }
+
+    .hero-sub {
+        font-size: 0.94rem;
+    }
+
+    .hero-handbill {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: min(100%, 260px);
+        margin-inline: auto;
+    }
+
+    .hero-handbill span {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .group-cta {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .group-cta h2 {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(1.5rem, 6.4vw, 1.8rem);
+        line-height: 1.65;
+    }
+
+    .group-cta p {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about::after {
+        display: none;
+    }
+}
+
 

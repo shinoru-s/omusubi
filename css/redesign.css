@@ -663,6 +663,12 @@ nav ul a.active {
         url("../images/design/proposal-sanpo-garden.png") center / cover no-repeat;
 }
 
+/* タイトル直下のメイン動画（「イベントの様子」と同じ作り） */
+.sanpo-video {
+    width: min(920px, 100%);
+    margin: 0 auto clamp(26px, 4vw, 38px);
+}
+
 .sanpo-single {
     display: grid;
     grid-template-columns: 1fr;
