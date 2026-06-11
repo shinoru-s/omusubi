@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お結び集会 | VRChat 交流会イベント</title>
+    <meta name="description" content="初心者さん、マイクオフ、デスクトップの方も歓迎。PC / VR / Questで参加できる、まったりとしたVRChat交流会イベント「お結び集会」の公式サイトです。">
+    <meta name="theme-color" content="#FFF9ED">
+    <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="./favicon.ico" sizes="any">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/redesign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/renewal.css">
+</head>
+<body>
 
-    <!-- ========== 共通 SVG アイコン（細線） ========== -->
+    <!-- ========== 共通 SVG アイコン ========== -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
         <!-- 矢印（右） -->
         <symbol id="icon-arrow" viewBox="0 0 24 24">
-            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
         <!-- 時計 -->
         <symbol id="icon-clock" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
         <!-- 注意（情報・丸型） -->
         <symbol id="icon-info" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M12 8v5M12 16.5v.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 8v5M12 16.5v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </symbol>
         <!-- Xロゴ -->
         <symbol id="icon-x" viewBox="0 0 24 24">
@@ -33,11 +36,11 @@
         </symbol>
         <!-- VRChatアイコン（ヘッドセット風） -->
         <symbol id="icon-vrchat" viewBox="0 0 24 24">
-            <path d="M4 10a3 3 0 013-3h10a3 3 0 013 3v3a3 3 0 01-3 3h-2l-2 2h-2l-2-2H7a3 3 0 01-3-3v-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M4 10a3 3 0 013-3h10a3 3 0 013 3v3a3 3 0 01-3 3h-2l-2 2h-2l-2-2H7a3 3 0 01-3-3v-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
             <circle cx="9" cy="11.5" r="1.3" fill="currentColor"/>
             <circle cx="15" cy="11.5" r="1.3" fill="currentColor"/>
         </symbol>
-        <!-- 小さな花（区切り装飾用・絵文字ではないシンプルな5弁花） -->
+        <!-- 小さな花（桜・5弁） -->
         <symbol id="icon-flower" viewBox="0 0 24 24">
             <g fill="currentColor">
                 <ellipse cx="12" cy="6" rx="2.6" ry="3.6"/>
@@ -48,249 +51,267 @@
                 <circle cx="12" cy="12" r="1.6" fill="#fff"/>
             </g>
         </symbol>
+        <!-- おむすび（白米＋海苔） -->
+        <symbol id="icon-omusubi" viewBox="0 0 48 48">
+            <path d="M24 5.5c2.5 0 4.8 1.3 6.1 3.5l13 21.6c1.4 2.3 1.4 5.1.1 7.4a7.2 7.2 0 0 1-6.3 3.7H11.1a7.2 7.2 0 0 1-6.3-3.7c-1.3-2.3-1.3-5.1.1-7.4l13-21.6A7.1 7.1 0 0 1 24 5.5z" fill="#FFFDF6" stroke="#6E5645" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16.5 31h15v6a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-6z" fill="#4A5743"/>
+        </symbol>
+        <!-- おむすび（線画・ボタン用） -->
+        <symbol id="icon-omusubi-line" viewBox="0 0 48 48">
+            <path d="M24 7c2.3 0 4.4 1.2 5.6 3.2l12.4 20.6c1.3 2.1 1.3 4.6.1 6.7a6.5 6.5 0 0 1-5.7 3.3H11.6a6.5 6.5 0 0 1-5.7-3.3c-1.2-2.1-1.2-4.6.1-6.7L18.4 10.2A6.4 6.4 0 0 1 24 7z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/>
+            <path d="M17.5 30h13v5.5a2.5 2.5 0 0 1-2.5 2.5h-8a2.5 2.5 0 0 1-2.5-2.5V30z" fill="currentColor"/>
+        </symbol>
     </svg>
-</head>
-<body>
 
-    <!-- ========== ページ全体を貫く桜の花びら ========== -->
-    <div class="petals-global" aria-hidden="true">
-        <span class="petal" style="left:10%; animation-duration:22s; animation-delay:0s;"></span>
-        <span class="petal" style="left:30%; animation-duration:26s; animation-delay:6s;"></span>
-        <span class="petal" style="left:50%; animation-duration:20s; animation-delay:11s;"></span>
-        <span class="petal" style="left:72%; animation-duration:24s; animation-delay:3s;"></span>
-        <span class="petal" style="left:90%; animation-duration:23s; animation-delay:14s;"></span>
-    </div>
-    <div class="scroll-meter" aria-hidden="true"><span></span></div>
-
-    <!-- ナビゲーション -->
-    <nav>
-        <a class="nav-logo" href="#">
-            <img class="nav-logo-mark" src="images/icon.png" alt="" aria-hidden="true">
-            <span class="nav-logo-text">お結び集会</span>
-        </a>
-        <ul>
-            <li><a href="#about">イベントについて</a></li>
-            <li><a href="#welcome">歓迎する方</a></li>
-            <li><a href="#gallery">ギャラリー</a></li>
-            <li><a href="#sanpo">ぶらりさんぽ</a></li>
-            <li><a href="#join">参加方法</a></li>
-            <li><a href="#rules">お願い</a></li>
-        </ul>
-    </nav>
-    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-       target="_blank" rel="noopener" class="floating-join">
-        <span class="floating-join-main">グループ参加</span>
-        <span class="floating-join-sub">VRChatで開く</span>
-    </a>
-
-    <!-- ========== ヒーローセクション ========== -->
-
-    <!-- ヒーロー画像エリア -->
-    <!--
-    ★ ヒーロー画像の差し替え方法 ★
-    images/photo-hero.png を好きな写真に置き換えてください。
-    -->
-    <div class="hero-img-area">
-        <img src="images/photo-hero.png" alt="お結び集会の様子">
+    <!-- ========== スクロール進捗：ころがる白おむすび ========== -->
+    <div class="musubi-progress" aria-hidden="true">
+        <div class="musubi-progress-bar"></div>
+        <svg class="musubi-progress-mark"><use href="#icon-omusubi"/></svg>
     </div>
 
-    <!-- タイトル・CTA エリア -->
-    <div class="hero-content-area">
-        <div class="glow-orb glow-orb-pink"></div>
-        <div class="glow-orb glow-orb-yellow"></div>
-        <div class="hero-content-inner">
-            <span class="hero-badge">VRChat 交流会イベント</span>
-            <h1 class="hero-title">
-                <span class="highlight">お結び</span>集会
-            </h1>
-            <p class="hero-sub">
-                初心者さん、マイクオフ、デスクトップの方も歓迎。<br>
-                PC / VR / Questで参加できる、まったりとした交流会です。
-            </p>
-            <div class="hero-handbill" aria-label="イベント概要">
-                <span>隔週日曜 20:30〜</span>
-                <span>PC / Quest</span>
-                <span>マイクOFF OK</span>
-                <span>ランク不問</span>
-            </div>
-            <div class="hero-actions" aria-label="主要リンク">
-                <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-                   target="_blank" rel="noopener" class="hero-primary-btn">
-                    グループに参加する
-                    <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-                </a>
-                <a href="#join" class="hero-secondary-btn">
-                    参加方法を見る
-                    <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- ========== ページ全体を舞う桜の花びら ========== -->
+    <div class="petals-global" aria-hidden="true"></div>
 
-    <section class="ease-strip" aria-label="参加しやすい理由">
-        <div class="ease-strip-inner">
-            <div class="ease-item">
-                <span class="ease-mark">01</span>
-                <strong>初心者専用の説明部屋あり</strong>
-                <p>初めての方も、まずは説明を聞いてからゆっくり合流できます。</p>
-            </div>
-            <div class="ease-item">
-                <span class="ease-mark">02</span>
-                <strong>マイクOFFでも参加OK</strong>
-                <p>話すのが苦手な方も、無理なく同じ空間を楽しめます。</p>
-            </div>
-            <div class="ease-item">
-                <span class="ease-mark">03</span>
-                <strong>会話のきっかけになるギミック</strong>
-                <p>タグ機能や直感的に遊べる要素を用意しています。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== グループ参加 CTA ========== -->
-    <section class="group-cta" id="join-cta">
-        <div class="group-cta-inner">
-            <span class="group-cta-en">Join Our Group</span>
-            <h2>まずはグループに参加しよう。</h2>
-            <p>
-                グループに登録することでイベントに参加できます。<br>
-                次回開催日もグループページよりご確認いただけます。
-            </p>
-            <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-               target="_blank" rel="noopener" class="btn-group">
-                <span class="btn-group-label">
-                    グループに参加する
-                    <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-                </span>
-                <span class="btn-group-sub">VRChat グループページへ</span>
+    <!-- ========== ナビゲーション ========== -->
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="nav-logo" href="#">
+                <img class="nav-logo-mark" src="images/icon.png" alt="" width="44" height="44">
+                <span class="nav-logo-text">お結び集会</span>
             </a>
+            <nav aria-label="メインメニュー">
+                <ul class="nav-links">
+                    <li><a href="#about">イベントについて</a></li>
+                    <li><a href="#welcome">歓迎する方</a></li>
+                    <li><a href="#gallery">ギャラリー</a></li>
+                    <li><a href="#sanpo">ぶらりさんぽ</a></li>
+                    <li><a href="#join">参加方法</a></li>
+                    <li><a href="#rules">お願い</a></li>
+                </ul>
+            </nav>
+            <a class="nav-cta" href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+               target="_blank" rel="noopener" data-burst>
+                <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                グループ参加
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-label="メニューを開閉">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </section>
+        <div class="nav-backdrop" aria-hidden="true"></div>
+    </header>
 
-    <!-- 波形区切り -->
-    <div class="wave-wrap" style="background:var(--card-bg);">
-        <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
-            <path d="M0,28 C360,56 720,0 1080,28 C1260,42 1380,14 1440,28 L1440,0 L0,0 Z" fill="#fff"/>
-        </svg>
-    </div>
+    <main>
 
-    <!-- ========== イベントについて ========== -->
-    <section class="about" id="about">
-        <div class="glow-orb glow-orb-soft"></div>
-        <div class="inner">
-            <span class="sec-title-en fade">About</span>
-            <h2 class="sec-title fade">どんなイベント？</h2>
-            <div class="sec-divider fade" aria-hidden="true">
-                <span class="sec-divider-line"></span>
-                <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
-                <span class="sec-divider-line"></span>
+        <!-- ========== ヒーロー ========== -->
+        <div class="hero">
+            <!--
+            ★ ヒーロー画像の差し替え方法 ★
+            images/photo-hero.png を好きな写真に置き換えてください。
+            -->
+            <figure class="hero-photo">
+                <img src="images/photo-hero.png" alt="お結び集会の様子" fetchpriority="high">
+            </figure>
+
+            <div class="hero-card">
+                <img class="hero-mascot" src="images/icon.png" alt="" aria-hidden="true">
+                <span class="hero-badge">VRChat 交流会イベント</span>
+                <h1 class="hero-title"><span class="highlight">お結び</span>集会</h1>
+                <p class="hero-sub">
+                    初心者さん、マイクオフ、デスクトップの方も歓迎。<br>
+                    PC / VR / Questで参加できる、まったりとした交流会です。
+                </p>
+                <ul class="hero-chips" aria-label="イベント概要">
+                    <li><span class="chip-dot" style="background:#E07A45;"></span>隔週日曜 20:30〜</li>
+                    <li><span class="chip-dot" style="background:#7FA968;"></span>PC / Quest</li>
+                    <li><span class="chip-dot" style="background:#F6C75F;"></span>マイクOFF OK</li>
+                    <li><span class="chip-dot" style="background:#E5A2B0;"></span>ランク不問</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+                       target="_blank" rel="noopener" class="btn btn-primary btn-nudge" data-burst>
+                        <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                        グループに参加する
+                        <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                    </a>
+                    <a href="#join" class="btn btn-ghost">
+                        参加方法を見る
+                        <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                    </a>
+                </div>
             </div>
+        </div>
 
-            <div class="about-grid">
-                <div class="about-text fade-left">
-                    <p>「PC・VR・Quest・マイクオフ」どなたでも参加できる、まったりとした交流会です。</p>
-                    <p>初心者の方やVRChatを始めたばかりの方も大歓迎。肩の力を抜いて、ゆるりと遊びに来てください。</p>
-                    <p>あなたの心の声を表示する便利なタグ機能や、誰でも直感的に遊べるギミックなど、たくさんご用意しています。</p>
-                    <p>初心者専用の説明部屋もあるので、初めての方も安心してお越しください。</p>
-                    <p class="about-note">スマホでのご参加は、ギミックや設備の仕様、複数人のご来場による負荷などにより満足のいく体験が難しいため、PC・VR・Questでのご参加を強く推奨しています。</p>
-                    <div class="about-tags">
-                        <span class="tag">初心者歓迎</span>
-                        <span class="tag">マイクOFF OK</span>
-                        <span class="tag">Quest対応</span>
-                        <span class="tag">ランク不問</span>
+        <!-- ========== 参加しやすい理由 ========== -->
+        <section class="ease" aria-label="参加しやすい理由">
+            <div class="inner">
+                <div class="ease-grid">
+                    <div class="ease-card">
+                        <div class="ease-num">
+                            <svg aria-hidden="true"><use href="#icon-omusubi"/></svg>
+                            <b>01</b>
+                        </div>
+                        <strong>初心者専用の説明部屋あり</strong>
+                        <p>初めての方も、まずは説明を聞いてからゆっくり合流できます。</p>
+                    </div>
+                    <div class="ease-card">
+                        <div class="ease-num">
+                            <svg aria-hidden="true"><use href="#icon-omusubi"/></svg>
+                            <b>02</b>
+                        </div>
+                        <strong>マイクOFFでも参加OK</strong>
+                        <p>話すのが苦手な方も、無理なく同じ空間を楽しめます。</p>
+                    </div>
+                    <div class="ease-card">
+                        <div class="ease-num">
+                            <svg aria-hidden="true"><use href="#icon-omusubi"/></svg>
+                            <b>03</b>
+                        </div>
+                        <strong>会話のきっかけになるギミック</strong>
+                        <p>タグ機能や直感的に遊べる要素を用意しています。</p>
                     </div>
                 </div>
-                <div class="about-img fade-right">
-                    <img src="images/poster.png" alt="お結び集会 ポスター">
+            </div>
+        </section>
+
+        <!-- ========== イベントについて ========== -->
+        <section class="about" id="about">
+            <div class="inner">
+                <span class="sec-label reveal">
+                    <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                    About
+                </span>
+                <h2 class="sec-title reveal">どんなイベント？</h2>
+                <div class="sec-divider reveal" aria-hidden="true">
+                    <span class="sec-divider-line"></span>
+                    <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
+                    <span class="sec-divider-line"></span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>「PC・VR・Quest・マイクオフ」どなたでも参加できる、まったりとした交流会です。</p>
+                        <p>初心者の方やVRChatを始めたばかりの方も大歓迎。肩の力を抜いて、ゆるりと遊びに来てください。</p>
+                        <p>あなたの心の声を表示する便利なタグ機能や、誰でも直感的に遊べるギミックなど、たくさんご用意しています。</p>
+                        <p>初心者専用の説明部屋もあるので、初めての方も安心してお越しください。</p>
+                        <p class="about-note">スマホでのご参加は、ギミックや設備の仕様、複数人のご来場による負荷などにより満足のいく体験が難しいため、PC・VR・Questでのご参加を強く推奨しています。</p>
+                        <div class="about-tags">
+                            <span class="tag">初心者歓迎</span>
+                            <span class="tag">マイクOFF OK</span>
+                            <span class="tag">Quest対応</span>
+                            <span class="tag">ランク不問</span>
+                        </div>
+                    </div>
+                    <div class="about-poster reveal" style="--reveal-delay:0.15s;">
+                        <img src="images/poster.png" alt="お結び集会 ポスター" loading="lazy" decoding="async">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 波形区切り -->
-    <div class="wave-wrap" style="background:linear-gradient(160deg,#FFF6E8,#F0FAF0);">
-        <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
-            <path d="M0,56 C480,0 960,56 1440,0 L1440,0 L0,0 Z" fill="var(--card-bg)"/>
-        </svg>
-    </div>
-
-    <!-- ========== こんな方を歓迎します ========== -->
-    <section class="welcome-bg" id="welcome">
-        <div class="glow-orb glow-orb-mint"></div>
-        <div class="glow-orb glow-orb-peach"></div>
-        <div class="inner">
-            <span class="sec-title-en fade">Welcome</span>
-            <h2 class="sec-title fade">こんな方、大歓迎です。</h2>
-            <div class="sec-divider fade" aria-hidden="true">
-                <span class="sec-divider-line"></span>
-                <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
-                <span class="sec-divider-line"></span>
+        <!-- ========== グループ参加 CTA ========== -->
+        <section class="group-cta" id="join-cta">
+            <div class="inner">
+                <div class="group-cta-card reveal">
+                    <img class="group-cta-art" src="images/decor/omusubi-watercolor.jpg" alt="" loading="lazy" decoding="async">
+                    <span class="sec-label">
+                        <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                        Join Our Group
+                    </span>
+                    <h2>まずはグループに参加しよう。</h2>
+                    <p>
+                        グループに登録することでイベントに参加できます。<br>
+                        次回開催日もグループページよりご確認いただけます。
+                    </p>
+                    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+                       target="_blank" rel="noopener" class="btn btn-primary btn-cta-main btn-nudge" data-burst>
+                        <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                        グループに参加する
+                        <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                    </a>
+                    <span class="group-cta-sub">VRChat グループページが開きます</span>
+                </div>
             </div>
+        </section>
 
-            <div class="welcome-grid fade">
-                <div class="welcome-item">操作まだ不慣れな初心者さん・ビジターさん</div>
-                <div class="welcome-item">パブリックでは輪に入りづらい思いをした方</div>
-                <div class="welcome-item">日本語だけで話したい方</div>
-                <div class="welcome-item">まったりおしゃべりしたい方</div>
-                <div class="welcome-item">デスクトップ、マイクオフでも参加可能なイベントお探しの方</div>
-                <div class="welcome-item">フレンドたくさん作りたい方</div>
-                <div class="welcome-item">ちょっぴり遊べる要素が欲しい方</div>
-                <div class="welcome-item">対戦ゲームが苦手でだけど、会話のきっかけにゲームなどもしたい方</div>
+        <!-- ========== こんな方を歓迎します ========== -->
+        <section class="welcome" id="welcome">
+            <div class="inner">
+                <span class="sec-label reveal">
+                    <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                    Welcome
+                </span>
+                <h2 class="sec-title reveal">こんな方、大歓迎です。</h2>
+                <div class="sec-divider reveal" aria-hidden="true">
+                    <span class="sec-divider-line"></span>
+                    <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
+                    <span class="sec-divider-line"></span>
+                </div>
+
+                <div class="welcome-grid">
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>操作まだ不慣れな初心者さん・ビジターさん</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>パブリックでは輪に入りづらい思いをした方</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>日本語だけで話したい方</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>まったりおしゃべりしたい方</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>デスクトップ、マイクオフでも参加可能なイベントお探しの方</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>フレンドたくさん作りたい方</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>ちょっぴり遊べる要素が欲しい方</div>
+                    <div class="welcome-item"><svg class="welcome-flower" aria-hidden="true"><use href="#icon-flower"/></svg>対戦ゲームが苦手でだけど、会話のきっかけにゲームなどもしたい方</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== ギャラリー ========== -->
-    <section class="gallery" id="gallery">
-        <div class="inner">
-            <span class="sec-title-en fade">Gallery</span>
-            <h2 class="sec-title fade">イベントの様子</h2>
-            <div class="sec-divider fade" aria-hidden="true">
-                <span class="sec-divider-line"></span>
-                <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
-                <span class="sec-divider-line"></span>
-            </div>
+        <!-- ========== ギャラリー ========== -->
+        <section class="gallery" id="gallery">
+            <div class="inner">
+                <span class="sec-label reveal">
+                    <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                    Gallery
+                </span>
+                <h2 class="sec-title reveal">イベントの様子</h2>
+                <div class="sec-divider reveal" aria-hidden="true">
+                    <span class="sec-divider-line"></span>
+                    <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
+                    <span class="sec-divider-line"></span>
+                </div>
 
-            <div class="gallery-video fade">
-                <div class="video-wrap">
+                <div class="video-wrap reveal">
                     <iframe
                         src="https://www.youtube.com/embed/Dq5vMrPAzKA"
                         title="お結び集会 イベントの様子"
-                        frameborder="0"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== ぶらりさんぽ ========== -->
-    <section class="sanpo-section" id="sanpo">
-        <div class="glow-orb glow-orb-green"></div>
-        <div class="inner">
-            <span class="sec-title-en fade">Burari Sanpo</span>
-            <h2 class="sec-title fade">お結びフレンズ ぶらりさんぽ</h2>
-            <div class="sec-divider fade" aria-hidden="true">
-                <span class="sec-divider-line"></span>
-                <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
-                <span class="sec-divider-line"></span>
-            </div>
+        <!-- ========== ぶらりさんぽ ========== -->
+        <section class="sanpo" id="sanpo">
+            <div class="inner">
+                <span class="sec-label reveal">
+                    <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                    Burari Sanpo
+                </span>
+                <h2 class="sec-title reveal">お結びフレンズ ぶらりさんぽ</h2>
+                <div class="sec-divider reveal" aria-hidden="true">
+                    <span class="sec-divider-line"></span>
+                    <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
+                    <span class="sec-divider-line"></span>
+                </div>
 
-            <div class="sanpo-video fade">
-                <div class="video-wrap">
+                <div class="video-wrap reveal">
                     <iframe
                         src="https://www.youtube.com/embed/xuvgdaLGy70"
                         title="お結びフレンズ ぶらりさんぽ"
-                        frameborder="0"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
                 </div>
-            </div>
 
-            <div class="sanpo-single fade">
-                <div class="sanpo-text">
+                <div class="sanpo-card reveal">
                     <div class="sanpo-badge">イベント以外でも交流できる、緩いグループ交流インスタンス</div>
                     <p>イベント外でもみんなと遊べる緩いインスタンス、<strong>【お結びフレンズ ぶらりさんぽ】</strong>週末不定期で開催中です。<br>
                     <strong>開催日はグループ通知にてお知らせします。</strong></p>
@@ -308,11 +329,11 @@
 
                     <div class="sanpo-photos">
                         <div class="sanpo-photo-item">
-                            <img src="images/sanpo-photo-1.png" alt="ぶらりさんぽの様子"
+                            <img src="images/sanpo-photo-1.png" alt="ぶらりさんぽの様子" loading="lazy" decoding="async"
                                  onerror="this.outerHTML='<div class=\'sanpo-photo-placeholder\'><small>画像をここに追加<br>sanpo-photo-1.png</small></div>'">
                         </div>
                         <div class="sanpo-photo-item">
-                            <img src="images/sanpo-photo-2.png" alt="ぶらりさんぽの様子"
+                            <img src="images/sanpo-photo-2.png" alt="ぶらりさんぽの様子" loading="lazy" decoding="async"
                                  onerror="this.outerHTML='<div class=\'sanpo-photo-placeholder\'><small>画像をここに追加<br>sanpo-photo-2.png</small></div>'">
                         </div>
                     </div>
@@ -322,187 +343,206 @@
                             <svg class="sanpo-time-icon" aria-hidden="true"><use href="#icon-clock"/></svg>
                             22:00〜 不定期開催
                         </div>
-
                         <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-                           target="_blank" rel="noopener" class="sanpo-btn">
+                           target="_blank" rel="noopener" class="btn btn-green" data-burst>
                             ぶらりさんぽに参加する
                             <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== 参加方法 ========== -->
-    <section class="join" id="join">
-        <div class="inner">
-            <span class="sec-title-en fade">How to Join</span>
-            <h2 class="sec-title fade">イベントへの参加方法</h2>
-            <div class="sec-divider fade" aria-hidden="true">
-                <span class="sec-divider-line"></span>
-                <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
-                <span class="sec-divider-line"></span>
-            </div>
-
-            <div class="steps fade">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <div class="step-body">
-                        <h3>グループに参加する</h3>
-                        <p><a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-               target="_blank" rel="noopener">こちら</a>からグループにご参加申請してください。承認後、イベントに参加できるようになります。</p>
-                    </div>
+        <!-- ========== 参加方法 ========== -->
+        <section class="join" id="join">
+            <div class="inner">
+                <span class="sec-label reveal">
+                    <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                    How to Join
+                </span>
+                <h2 class="sec-title reveal">イベントへの参加方法</h2>
+                <div class="sec-divider reveal" aria-hidden="true">
+                    <span class="sec-divider-line"></span>
+                    <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
+                    <span class="sec-divider-line"></span>
                 </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <div class="step-body">
-                        <h3>VRChat を起動して「グループ」を開く</h3>
-                        <p>メニューから「グループ」→「【お結び集会】初心者向け交流会イベント」を選択します。</p>
-                        <div class="step-img">
-                            <img src="images/photo-join.png" alt="VRChat参加手順">
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">
+                            <svg aria-hidden="true"><use href="#icon-omusubi"/></svg>
+                            <b>01</b>
+                        </div>
+                        <div class="step-body">
+                            <h3>グループに参加する</h3>
+                            <p><a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+                   target="_blank" rel="noopener">こちら</a>からグループにご参加申請してください。承認後、イベントに参加できるようになります。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">
+                            <svg aria-hidden="true"><use href="#icon-omusubi"/></svg>
+                            <b>02</b>
+                        </div>
+                        <div class="step-body">
+                            <h3>VRChat を起動して「グループ」を開く</h3>
+                            <p>メニューから「グループ」→「【お結び集会】初心者向け交流会イベント」を選択します。</p>
+                            <div class="step-img">
+                                <img src="images/photo-join.png" alt="VRChat参加手順" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">
+                            <svg aria-hidden="true"><use href="#icon-omusubi"/></svg>
+                            <b>03</b>
+                        </div>
+                        <div class="step-body">
+                            <h3>「イベント」タブからインスタンスを選ぶ</h3>
+                            <p>イベント当日にインスタンスが作成されます。「イベント」タブから選択して入場してください。</p>
                         </div>
                     </div>
                 </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <div class="step-body">
-                        <h3>「イベント」タブからインスタンスを選ぶ</h3>
-                        <p>イベント当日にインスタンスが作成されます。「イベント」タブから選択して入場してください。</p>
-                    </div>
+
+                <div class="caution-box reveal">
+                    <h3>
+                        <svg class="caution-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+                        グループ申請について
+                    </h3>
+                    <p class="caution-lead">以下の方は申請を通せない場合があります。</p>
+                    <ul class="caution-list">
+                        <li>「文字羅列」のユーザー名の方</li>
+                        <li>日本語外の言語でのみ書かれたプロフの方</li>
+                        <li>プロフィール無記載の方</li>
+                        <li>版権アバター使用・荒らし行為疑いのある方</li>
+                        <li>センシティブなグループばかりに加入している方</li>
+                        <li>通常の会話が困難なハンディキャップをお持ちの方（DMでご相談ください）</li>
+                        <li>Xアカなし・プロフ説明なし・VRCでの活動経歴が全くない方</li>
+                    </ul>
+                    <p class="caution-note">
+                        イベントでのトラブル防止のため、何卒ご理解くださいませ。
+                    </p>
+                </div>
+
+                <div class="join-photo reveal">
+                    <img src="images/photo-about.png" alt="グループ参加について" loading="lazy" decoding="async">
                 </div>
             </div>
+        </section>
 
-            <div class="caution-box fade">
-                <h3>
-                    <svg class="caution-icon" aria-hidden="true"><use href="#icon-info"/></svg>
-                    グループ申請について
-                </h3>
-                <p class="caution-lead">以下の方は申請を通せない場合があります。</p>
-                <ul class="caution-list">
-                    <li>「文字羅列」のユーザー名の方</li>
-                    <li>日本語外の言語でのみ書かれたプロフの方</li>
-                    <li>プロフィール無記載の方</li>
-                    <li>版権アバター使用・荒らし行為疑いのある方</li>
-                    <li>センシティブなグループばかりに加入している方</li>
-                    <li>通常の会話が困難なハンディキャップをお持ちの方（DMでご相談ください）</li>
-                    <li>Xアカなし・プロフ説明なし・VRCでの活動経歴が全くない方</li>
-                </ul>
-                <p class="caution-note">
-                    イベントでのトラブル防止のため、何卒ご理解くださいませ。
-                </p>
+        <!-- ========== イベントルール ========== -->
+        <section class="rules" id="rules">
+            <div class="inner">
+                <span class="sec-label reveal">
+                    <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                    Rules
+                </span>
+                <h2 class="sec-title reveal">安心して過ごすためのお願い</h2>
+                <div class="sec-divider reveal" aria-hidden="true">
+                    <span class="sec-divider-line"></span>
+                    <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
+                    <span class="sec-divider-line"></span>
+                </div>
+
+                <div class="rules-photo reveal">
+                    <img src="images/photo-rules.png" alt="イベントルールの様子" loading="lazy" decoding="async">
+                </div>
+
+                <div class="rule-grid">
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">01</div>
+                            <div class="rule-title">ポータル設置・強制誘導</div>
+                        </div>
+                        <div class="rule-detail">ポータルの設置、強引な他ワールド誘導</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">02</div>
+                            <div class="rule-title">不適切なアバター</div>
+                        </div>
+                        <div class="rule-detail">極度に大きい、グロテスク、露出が多い、海賊版・版権物アバター使用</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">03</div>
+                            <div class="rule-title">武器・大オブジェクト・パーティクル</div>
+                        </div>
+                        <div class="rule-detail">武器の装備、大きいオブジェクトの召喚、派手・垂れ流しパーティクル</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">04</div>
+                            <div class="rule-title">音響・視界ジャック</div>
+                        </div>
+                        <div class="rule-detail">ワールド全体への効果音、音の垂れ流し、視界ジャック行為</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">05</div>
+                            <div class="rule-title">極度に重いアバター</div>
+                        </div>
+                        <div class="rule-detail">極度に重いアバターの使用（人によっては負荷で落ちてしまいます）</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">06</div>
+                            <div class="rule-title">販売・宣伝行為</div>
+                        </div>
+                        <div class="rule-detail">グループ勧誘や自分が販売中のギミックを見せ、購入への関心を促す行為等</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">07</div>
+                            <div class="rule-title">タグの乱用</div>
+                        </div>
+                        <div class="rule-detail">全部付ける等の矛盾した使用</div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-card-header">
+                            <div class="rule-num">08</div>
+                            <div class="rule-title">過剰な接近・センシティブ行為・視界を塞ぐ接触</div>
+                        </div>
+                        <div class="rule-detail">撫であい、過剰接近、抱きつき、追いかけ、顔面接触、顔で視界が埋まる程の距離、センシティブ行為全般</div>
+                    </div>
+                </div>
+
+                <div class="rules-note reveal">
+                    <p>VRCを始めたばかりの方も多いため、上記行為に見慣れていない方が多いです。</p>
+                    <p>該当すると判断した場合、スタッフが随時お声がけいたしますので、ご理解の程よろしくお願いいたします。</p>
+                    <p class="rules-warning">ルールの守れない方が多いとワールド内に厳しい制限を設けざるを得なくなります。</p>
+                </div>
             </div>
+        </section>
 
-            <div class="step-img fade" style="margin-top: 40px;">
-                <img src="images/photo-about.png" alt="グループ参加について">
+        <!-- ========== 最終CTA ========== -->
+        <section class="last-cta" aria-label="グループ申請">
+            <div class="inner">
+                <div class="last-cta-deco reveal" aria-hidden="true">
+                    <svg class="deco-flower"><use href="#icon-flower"/></svg>
+                    <svg class="deco-musubi"><use href="#icon-omusubi"/></svg>
+                    <svg class="deco-flower"><use href="#icon-flower"/></svg>
+                </div>
+                <h2 class="reveal">あなたの心に、お結びを。</h2>
+                <p class="reveal">次回開催日もグループページよりご確認いただけます。</p>
+                <div class="reveal" style="--reveal-delay:0.12s;">
+                    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+                       target="_blank" rel="noopener" class="btn btn-primary btn-cta-main btn-nudge" data-burst>
+                        <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+                        グループ申請はこちら
+                        <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== イベントルール ========== -->
-    <section class="rules" id="rules">
-        <div class="inner">
-            <span class="sec-title-en fade">Rules</span>
-            <h2 class="sec-title fade">安心して過ごすためのお願い</h2>
-            <div class="sec-divider fade" aria-hidden="true">
-                <span class="sec-divider-line"></span>
-                <svg class="sec-divider-mark"><use href="#icon-flower"/></svg>
-                <span class="sec-divider-line"></span>
-            </div>
-
-            <div class="rules-img fade">
-                <img src="images/photo-rules.png" alt="イベントルールの様子">
-            </div>
-
-            <div class="rule-grid fade">
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">01</div>
-                        <div class="rule-title">ポータル設置・強制誘導</div>
-                    </div>
-                    <div class="rule-detail">ポータルの設置、強引な他ワールド誘導</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">02</div>
-                        <div class="rule-title">不適切なアバター</div>
-                    </div>
-                    <div class="rule-detail">極度に大きい、グロテスク、露出が多い、海賊版・版権物アバター使用</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">03</div>
-                        <div class="rule-title">武器・大オブジェクト・パーティクル</div>
-                    </div>
-                    <div class="rule-detail">武器の装備、大きいオブジェクトの召喚、派手・垂れ流しパーティクル</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">04</div>
-                        <div class="rule-title">音響・視界ジャック</div>
-                    </div>
-                    <div class="rule-detail">ワールド全体への効果音、音の垂れ流し、視界ジャック行為</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">05</div>
-                        <div class="rule-title">極度に重いアバター</div>
-                    </div>
-                    <div class="rule-detail">極度に重いアバターの使用（人によっては負荷で落ちてしまいます）</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">06</div>
-                        <div class="rule-title">販売・宣伝行為</div>
-                    </div>
-                    <div class="rule-detail">グループ勧誘や自分が販売中のギミックを見せ、購入への関心を促す行為等</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">07</div>
-                        <div class="rule-title">タグの乱用</div>
-                    </div>
-                    <div class="rule-detail">全部付ける等の矛盾した使用</div>
-                </div>
-
-                <div class="rule-card">
-                    <div class="rule-card-header">
-                        <div class="rule-num">08</div>
-                        <div class="rule-title">過剰な接近・センシティブ行為・視界を塞ぐ接触</div>
-                    </div>
-                    <div class="rule-detail">撫であい、過剰接近、抱きつき、追いかけ、顔面接触、顔で視界が埋まる程の距離、センシティブ行為全般</div>
-                </div>
-
-            </div>
-
-            <div class="rules-note fade">
-                <p>VRCを始めたばかりの方も多いため、上記行為に見慣れていない方が多いです。</p>
-                <p>該当すると判断した場合、スタッフが随時お声がけいたしますので、ご理解の程よろしくお願いいたします。</p>
-                <p class="rules-warning">ルールの守れない方が多いとワールド内に厳しい制限を設けざるを得なくなります。</p>
-            </div>
-
-            <div style="text-align:center; margin-top:40px;" class="fade">
-                <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
-                   target="_blank" rel="noopener" class="rules-group-btn">
-                    グループ申請はこちら
-                    <svg class="btn-icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- ========== フッター ========== -->
     <footer>
         <div class="footer-inner">
             <div class="footer-logo">
-                <img class="footer-logo-mark" src="images/icon.png" alt="" aria-hidden="true">
+                <img class="footer-logo-mark" src="images/icon.png" alt="" width="76" height="76" loading="lazy">
                 <span class="footer-logo-text">お結び集会</span>
             </div>
             <p class="footer-host">主催 — しのる。</p>
@@ -521,6 +561,16 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- ========== フローティングCTA ========== -->
+    <a href="https://vrchat.com/home/group/grp_071a833c-ca86-4c0c-9ebd-651d7657b8a1"
+       target="_blank" rel="noopener" class="floating-join" data-burst>
+        <span class="floating-join-main">
+            <svg class="musubi-mini" aria-hidden="true"><use href="#icon-omusubi-line"/></svg>
+            グループ参加
+        </span>
+        <span class="floating-join-sub">VRChatで開く</span>
+    </a>
+
+    <script src="js/renewal.js"></script>
 </body>
 </html>
