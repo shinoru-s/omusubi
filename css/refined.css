@@ -1,0 +1,255 @@
+/* お結び集会 LP 改良版 — 確認済みの案2を本番へ反映 */
+
+body.proposal-2-refined .hero {
+    padding-bottom: clamp(28px, 3vw, 36px);
+}
+
+body.proposal-2-refined .ease {
+    background-color: #f3e5cf;
+    background-image:
+        linear-gradient(rgba(250, 241, 225, 0.58), rgba(247, 234, 213, 0.58)),
+        var(--washi);
+    background-position: center, center;
+    background-size: auto, 560px auto;
+    background-repeat: no-repeat, repeat;
+    border-top: 2px solid rgba(215, 187, 145, 0.72);
+    border-bottom: 2px solid rgba(215, 187, 145, 0.72);
+}
+
+body.proposal-2-refined .ease-grid {
+    position: relative;
+    gap: clamp(18px, 3vw, 34px);
+    padding-top: 16px;
+}
+
+body.proposal-2-refined .ease-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    right: 12%;
+    border-top: 2px dashed rgba(127, 169, 104, 0.36);
+}
+
+body.proposal-2-refined .ease-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 253, 248, 0.96);
+}
+
+body.proposal-2-refined .ease-card:nth-child(2) {
+    transform: translateY(-18px);
+    border-color: rgba(127, 169, 104, 0.48);
+    box-shadow: 0 14px 34px rgba(94, 66, 41, 0.13);
+}
+
+body.proposal-2-refined .about {
+    padding-bottom: clamp(60px, 6vw, 84px);
+}
+
+body.proposal-2-refined .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
+    gap: clamp(42px, 7vw, 82px);
+}
+
+body.proposal-2-refined .about-text {
+    border-left: 5px solid rgba(224, 122, 69, 0.72);
+    box-shadow: 0 8px 24px rgba(94, 66, 41, 0.08);
+}
+
+body.proposal-2-refined .about-text::before { display: none; }
+body.proposal-2-refined .about-poster { transform: translateY(22px); }
+
+body.proposal-2-refined .refined-photo-gallery {
+    margin-top: clamp(44px, 6vw, 72px);
+    padding-top: clamp(34px, 5vw, 52px);
+    border-top: 1px solid rgba(160, 138, 120, 0.24);
+}
+
+body.proposal-2-refined .refined-photo-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 30px);
+}
+
+body.proposal-2-refined .refined-photo-gallery figure {
+    margin: 0;
+    padding: clamp(6px, 0.8vw, 9px);
+    border: 1px solid var(--line);
+    border-radius: clamp(14px, 2vw, 22px);
+    background: #fff;
+    box-shadow: var(--shadow-photo);
+}
+
+body.proposal-2-refined .refined-photo-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: clamp(10px, 1.5vw, 16px);
+    object-fit: contain;
+    background: var(--paper-warm);
+}
+
+body.proposal-2-refined .welcome-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(26px, 5vw, 58px);
+    padding: clamp(20px, 4vw, 38px) clamp(22px, 5vw, 58px);
+    border: 1px solid rgba(127, 169, 104, 0.34);
+    border-radius: calc(var(--radius) + 6px);
+    background: rgba(238, 245, 230, 0.8);
+    box-shadow: 0 12px 30px rgba(77, 98, 65, 0.1);
+}
+
+body.proposal-2-refined .welcome-item {
+    min-height: 78px;
+    padding: 15px 4px;
+    border: 0;
+    border-bottom: 1px dashed rgba(127, 169, 104, 0.35);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.proposal-2-refined .welcome-item:nth-last-child(-n + 2) { border-bottom: 0; }
+body.proposal-2-refined .welcome-item:hover { transform: translateX(4px); box-shadow: none; }
+
+body.proposal-2-refined .gallery .video-wrap {
+    width: min(860px, 92%);
+    margin: 0 auto !important;
+}
+
+body.proposal-2-refined .sanpo .video-wrap {
+    width: min(800px, 88%);
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body.proposal-2-refined .join {
+    background-color: #efd9b8;
+    background-image:
+        linear-gradient(rgba(249, 235, 213, 0.48), rgba(255, 247, 232, 0.56)),
+        url("../images/decor/refined-mizuhiki.svg"),
+        var(--washi);
+    background-position: center, center top, center;
+    background-size: auto, 1200px 720px, 560px auto;
+    background-repeat: no-repeat, repeat-y, repeat;
+    border-top: 2px solid rgba(208, 170, 116, 0.58);
+    border-bottom: 2px solid rgba(208, 170, 116, 0.58);
+}
+
+body.proposal-2-refined .steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr) minmax(0, 0.85fr);
+    gap: 20px;
+    align-items: start;
+    padding-block: 12px;
+}
+
+body.proposal-2-refined .steps::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 8%;
+    right: 8%;
+    border-top: 2px dashed rgba(224, 122, 69, 0.3);
+}
+
+body.proposal-2-refined .step {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    justify-self: stretch;
+    box-shadow: 0 8px 24px rgba(94, 66, 41, 0.08);
+}
+
+body.proposal-2-refined .step-num { margin: 0 auto 16px; }
+body.proposal-2-refined .step-body h3 { text-align: center; }
+
+body.proposal-2-refined .rule-grid {
+    gap: 0 clamp(24px, 4vw, 44px);
+    padding: clamp(20px, 4vw, 42px) clamp(22px, 5vw, 54px);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    background:
+        linear-gradient(rgba(255, 253, 248, 0.92), rgba(255, 250, 240, 0.92)),
+        var(--washi) center / 560px auto repeat;
+    box-shadow: var(--shadow-1);
+}
+
+body.proposal-2-refined .rule-card {
+    padding: 20px 0;
+    border: 0;
+    border-bottom: 1px dashed var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.proposal-2-refined .rule-card:nth-last-child(-n + 2) { border-bottom: 0; }
+body.proposal-2-refined .rule-card:hover { transform: translateX(3px); box-shadow: none; }
+
+body.proposal-2-refined .rules {
+    background-color: #dfe9d7;
+    background-image:
+        linear-gradient(rgba(236, 243, 229, 0.48), rgba(247, 248, 237, 0.56)),
+        url("../images/decor/refined-leaf-ripple.svg"),
+        var(--washi);
+    background-position: center, center top, center;
+    background-size: auto, 1200px 720px, 560px auto;
+    background-repeat: no-repeat, repeat-y, repeat;
+    border-bottom: 2px solid rgba(148, 177, 127, 0.52);
+}
+
+body.proposal-2-refined .rules > .inner {
+    padding: clamp(34px, 5vw, 62px);
+    border: 1px solid rgba(157, 177, 137, 0.62);
+    border-radius: 34px;
+    background:
+        linear-gradient(rgba(255, 253, 248, 0.9), rgba(255, 250, 240, 0.92)),
+        var(--washi) center / 560px auto repeat;
+    box-shadow: 0 18px 44px rgba(94, 80, 59, 0.13);
+}
+
+@media (max-width: 760px) {
+    body.proposal-2-refined .hero { padding-bottom: 24px; }
+    body.proposal-2-refined .ease-grid::before { display: none; }
+    body.proposal-2-refined .ease-card:nth-child(2) { transform: none; }
+
+    body.proposal-2-refined .ease,
+    body.proposal-2-refined .join,
+    body.proposal-2-refined .rules {
+        background-size: auto, 900px 540px, 520px auto;
+    }
+
+    body.proposal-2-refined .ease { background-size: auto, 520px auto; }
+    body.proposal-2-refined .rules > .inner { padding: 26px 18px; border-radius: 24px; }
+    body.proposal-2-refined .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    body.proposal-2-refined .about-poster { transform: none; }
+    body.proposal-2-refined .welcome-grid { grid-template-columns: 1fr; padding: 16px 20px; }
+    body.proposal-2-refined .welcome-item:nth-last-child(2) { border-bottom: 1px dashed rgba(127, 169, 104, 0.35); }
+    body.proposal-2-refined .gallery .video-wrap { width: 100%; margin-inline: auto; }
+    body.proposal-2-refined .sanpo .video-wrap { width: 100%; }
+    body.proposal-2-refined .refined-photo-gallery__grid { grid-template-columns: 1fr; gap: 22px; }
+    body.proposal-2-refined .steps { grid-template-columns: 1fr; gap: 16px; padding-left: 0; }
+    body.proposal-2-refined .steps::before { display: none; }
+
+    body.proposal-2-refined .step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        width: 100%;
+        justify-self: stretch !important;
+    }
+
+    body.proposal-2-refined .step-num { margin: 0; }
+    body.proposal-2-refined .step-body h3 { text-align: left; }
+    body.proposal-2-refined .rule-grid { grid-template-columns: 1fr; padding: 16px 20px; }
+    body.proposal-2-refined .rule-card:nth-last-child(2) { border-bottom: 1px dashed var(--line); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.proposal-2-refined .ease-card:nth-child(2),
+    body.proposal-2-refined .about-poster { transform: none; }
+}
